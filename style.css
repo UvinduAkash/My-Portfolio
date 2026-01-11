@@ -1,0 +1,1282 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Outfit', sans-serif; /* Cleaner, modern font */
+}
+
+:root {
+    /* Jewel Tone Palette */
+    --bg-dark: #0a0a0f; /* Deepest Void */
+    --bg-light: #13131f; /* Soft Navy */
+    --jewel-purple: #8b5cf6; /* Amethyst */
+    --jewel-teal: #14b8a6; /* Deep Emerald */
+    --text-main: #e2e8f0;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background: radial-gradient(circle at top right, #1e1b4b, var(--bg-dark));
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+html { font-size: 62.5%; }
+
+/* Header Styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(10px); /* Glass blur on header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.dot { color: var(--jewel-purple); }
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-main);
+    margin-left: 4rem;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--jewel-purple);
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-main);
+    display: none;
+    cursor: pointer;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+span { color: var(--jewel-purple); }
+
+/* Home Section Unique Layout */
+.home {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.home-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--jewel-teal);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.home-content h1 {
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, var(--jewel-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #94a3b8;
+    margin-bottom: 3rem;
+    max-width: 500px;
+}
+
+/* Unique Buttons */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 3.5rem;
+    background: var(--jewel-purple);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.4s;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.btn:hover {
+    background: var(--jewel-teal);
+    box-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Social Media Glass Icons */
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: var(--glass);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--jewel-teal);
+    margin: 0 1.5rem 3rem 0;
+    transition: 0.4s;
+}
+
+.social-media a:hover {
+    background: var(--jewel-teal);
+    color: #fff;
+    transform: rotate(360deg);
+}
+
+/* Image Glow Area */
+.home-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.home-img img {
+    width: 80%;
+    border-radius: 20px;
+    z-index: 2;
+    mask-image: linear-gradient(black 80%, transparent); /* Fades image bottom */
+}
+
+/* The Glowing Aura behind image */
+.glow-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--jewel-purple);
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 1;
+    animation: pulseGlow 5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { opacity: 0.3; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* About Section */
+.about {
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-img img { width: 30vw; border-radius: 10px; }
+
+.glass-pane {
+    background: var(--glass);
+    padding: 3rem;
+    border-left: 4px solid var(--jewel-purple);
+    border-radius: 0 10px 10px 0;
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+/* Skills - Jewel Cards (The Unique Part) */
+.skills-container {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Specific rule for the My Paths heading */
+.skills .heading {
+    font-size: 5rem; /* Huge Text */
+    margin-bottom: 4rem;
+}
+
+.jewel-card {
+    flex: 1 1 30rem;
+    padding: 4rem 3rem;
+    border-radius: 20px;
+    transition: 0.5s ease;
+    
+    /* --- THE WAVEFORM LOOK --- */
+    
+    /* 1. The Gradient Border Trick */
+    border: 3px solid transparent; /* Reserve space for border */
+    
+    /* 2. Background: Inner Black + Outer Gradient (Purple -> Cyan) */
+    background: 
+        linear-gradient(#0b0d17, #0b0d17) padding-box, /* Inner background (Dark) */
+        linear-gradient(135deg, #aa00ff, #00c8ff) border-box; /* The Border Gradient */
+        
+    /* 3. Initial Glow */
+    box-shadow: 0 0 20px rgba(170, 0, 255, 0.15); 
+}
+
+/* Card Title & Icon */
+.jewel-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.jewel-card h3 i {
+    color: #00c8ff; /* Cyan Icon to match the border end */
+    font-size: 3rem;
+}
+
+/* List Styling */
+.jewel-card ol, .jewel-card ul {
+    list-style: none;
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    color: #e0e0e0;
+}
+
+.jewel-card li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 1rem 3.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: default;
+    z-index: 1;
+    color: #e0e0e0;
+    line-height: 1.2;
+}
+
+.jewel-card li.clickable-item {
+    justify-content: space-between;
+    padding-right: 2rem;
+    cursor: pointer;
+}
+
+.jewel-card li::before {
+    content: '▹';
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00c8ff;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.jewel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px rgba(0, 200, 255, 0.4);
+    background: 
+        linear-gradient(#0b0d17, #0b0d17) padding-box,
+        linear-gradient(135deg, #00c8ff, #aa00ff) border-box;
+}
+
+.jewel-card li:hover {
+    background: rgba(170, 0, 255, 0.25);
+    transform: translateX(10px);
+    color: white;
+    box-shadow: -5px 0 10px rgba(170, 0, 255, 0.1);
+}
+
+.clickable-item {
+    border: 1px solid rgba(0, 200, 255, 0.3);
+}
+
+.clickable-item:hover {
+    border-color: rgba(0, 200, 255, 0.6);
+}
+
+.clickable-item i {
+    color: #00c8ff;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.clickable-item:hover i {
+    transform: translateX(5px);
+}
+
+/* POPUP STYLES */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-box {
+    position: relative;
+    background: linear-gradient(135deg, #1a1d2e 0%, #0b0d17 100%);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #aa00ff, #00c8ff) 1;
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    animation: popupSlideIn 0.3s ease;
+}
+
+@keyframes popupSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.close-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    color: #00c8ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-icon:hover {
+    color: #aa00ff;
+    transform: rotate(90deg);
+}
+
+.popup-icon {
+    margin-bottom: 1.5rem;
+}
+
+.popup-icon i {
+    font-size: 4rem;
+    color: #00c8ff;
+}
+
+#popup-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #00c8ff, #aa00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#popup-text {
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.languages-grid span {
+    font-size: 1.2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.languages-grid span:hover {
+    background: rgba(0, 200, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.languages-grid i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.btn {
+    background: linear-gradient(135deg, #aa00ff, #00c8ff);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(170, 0, 255, 0.4);
+}
+
+/* --- WORK SECTION --- */
+.work {
+    min-height: 100vh;
+    padding: 8rem 9% 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.work-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.work .heading {
+    font-size: 5rem !important; 
+    margin-bottom: 4rem;
+    text-align: center; /* Ensures it stays centered like the others */
+}
+
+/* --- THE ACCORDION BOX --- */
+.accordion-box {
+    background: rgba(11, 13, 23, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(#0b0d17, #0b0d17) padding-box,
+        linear-gradient(135deg, #aa00ff, #00c8ff) border-box;
+    box-shadow: 0 0 15px rgba(170, 0, 255, 0.1);
+}
+
+.accordion-box:hover {
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
+}
+
+/* --- HEADER --- */
+.accordion-header {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+}
+
+.accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+}
+
+.accordion-title i {
+    font-size: 2.2rem;
+    color: #00c8ff;
+}
+
+.icon-arrow {
+    font-size: 2rem;
+    color: #aa00ff;
+    transition: transform 0.4s ease;
+}
+
+.accordion-box.active > .accordion-header .icon-arrow {
+    transform: rotate(180deg);
+    color: #00c8ff;
+}
+
+/* --- CONTENT (The Sliding Part) --- */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* Smooth slide */
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* --- LISTS --- */
+.project-list {
+    list-style: none;
+    padding: 1rem 2rem 1rem 5rem;
+}
+
+.project-list li {
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.project-list li:hover {
+    color: #00c8ff;
+    padding-left: 10px;
+    background: rgba(255, 255, 255, 0.02); /* Subtle highlight */
+}
+
+/* --- NEW: THE HINT ARROW --- */
+.click-hint {
+   font-size: 2rem; /* Much Bigger */
+    color: #00c8ff;  /* Bright Cyan by default */
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.6); /* Neon Glow Effect */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy animation */
+    
+    /* Optional: Add a subtle background circle */
+    background: rgba(0, 200, 255, 0.1);
+    border-radius: 50%;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* When hovering the row, make the arrow bright and move it */
+.project-list li:hover .click-hint {
+    background: #00c8ff;       /* Solid Cyan Background */
+    color: #0b0d17;            /* Dark Arrow Icon (Contrast) */
+    transform: translateX(10px) scale(1.1); /* Move right & grow slightly */
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.8); /* Intense Glow */
+}
+
+.project-list li i {
+    font-size: 0.8rem;
+    color: #aa00ff;
+}
+
+/* --- NESTED BOXES (Drawings) --- */
+.nested-box {
+    margin: 1rem 2rem 1rem 4rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.nested-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.nested-header:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nested-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+/* --- SCROLLABLE LIST (The Fix for Drawings) --- */
+/* This limits the height of the list inside Pencil/Canvas arts */
+.scrollable-list {
+    max-height: 250px; /* Maximum height before scrolling starts */
+    overflow-y: auto;  /* Enables vertical scroll */
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+/* --- CUSTOM SCROLLBAR STYLING --- */
+/* Width */
+.scrollable-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+.scrollable-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+/* Handle */
+.scrollable-list::-webkit-scrollbar-thumb {
+    background: #aa00ff; /* Purple Handle */
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.scrollable-list::-webkit-scrollbar-thumb:hover {
+    background: #00c8ff; /* Cyan on Hover */
+}
+
+/* Form Styling */
+.contact form textarea, .contact form input {
+    width: 100%;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.contact form input:focus, .contact form textarea:focus {
+    border-color: var(--jewel-purple);
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+    .home { grid-template-columns: 1fr; text-align: center; }
+    .home-content h1 { font-size: 5rem; }
+    .home-img { margin-top: 3rem; }
+    .about { flex-direction: column; }
+    .glass-pane { border-left: none; border-top: 4px solid var(--jewel-purple); }
+}
+
+@media (max-width: 768px) {
+    #menu-icon { display: block; }
+    .navbar {
+        position: absolute;
+        top: 100%; left: 0; width: 100%;
+        background: var(--bg-dark);
+        display: none;
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .navbar.active { display: flex; }
+    .navbar a { margin: 1.5rem 0; font-size: 2rem; }
+}
+
+/* Popup Overlay (The dark background) */
+.popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark dimming */
+    backdrop-filter: blur(5px); /* Blurs the website behind */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+/* The Popup Box (Jewel Theme) */
+.popup-box {
+    background: var(--bg-light);
+    border: 2px solid var(--jewel-purple); /* Purple Border */
+    padding: 3rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5); /* Purple Glow */
+    position: relative;
+    transform: scale(0.8);
+    animation: popupScale 0.3s forwards;
+}
+
+.popup-box h3 {
+    font-size: 2.4rem;
+    color: var(--jewel-teal);
+    margin: 1.5rem 0;
+}
+
+.popup-box p {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.popup-icon i {
+    font-size: 5rem;
+    color: var(--jewel-purple);
+}
+
+.close-icon {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-icon:hover { color: var(--jewel-purple); }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popupScale {
+    to { transform: scale(1); }
+}
+
+.home-img img {
+    width: 80%;
+    border-radius: 20px; 
+    z-index: 2;
+    
+    /* === CREATIVE BORDER START === */
+    /* This creates the transparent gap for the gradient to show through */
+    border: 6px solid transparent;
+    
+    /* This layers the background: Image Background (Dark) + The Gradient Border */
+    background: linear-gradient(var(--bg-dark), var(--bg-dark)) padding-box,
+                linear-gradient(135deg, var(--jewel-purple), var(--jewel-teal)) border-box;
+    
+    /* This adds the neon glow around the border */
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4), 
+                0 0 60px rgba(20, 184, 166, 0.2);
+    /* === CREATIVE BORDER END === */
+
+    /* Floating Animation */
+    animation: floatImage 6s ease-in-out infinite;
+}
+
+/* Ensure this animation exists at the bottom of your CSS */
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); } /* Moves up */
+    100% { transform: translateY(0); }
+}
+
+/* Ensure the body has the dark background color */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0f0c29; /* Deep dark purple/black background */
+    overflow-x: hidden; /* Prevent scrollbars from the canvas */
+}
+
+/* 1. The Main Container */
+.home {
+    position: relative; /* Essential for containing the absolute canvas */
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden; 
+    /* Keep your existing flex/grid styles here for alignment */
+    /* e.g., display: flex; align-items: center; ... */
+}
+
+/* 2. The Wave Background */
+#waveCanvas {
+    position: absolute; /* This breaks it out of the flex layout */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Sits at the back */
+    pointer-events: none;
+}
+
+/* 3. The Content (Text and Image) */
+/* We applied this class to BOTH your text div and image div above */
+.main-content {
+    position: relative;
+    z-index: 10; /* Sits on top of the canvas */
+}
+
+/* 1. The Section Container - FORCED BLACK */
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Forces it to fill the screen */
+    background-color: #000000 !important; /* Pure Black Background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 2. The Canvas - Behind everything */
+#crystalCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Lowest Level */
+}
+
+/* 3. The Wrapper - In Front */
+.about-wrapper {
+    position: relative;
+    z-index: 10; /* High Level to sit on top of crystals */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0 10%;
+    width: 100%;
+}
+
+/* 4. Image Styling */
+.about-img-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.about-img-container img {
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid #00e5ff; /* Cyan Border */
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4); /* Cyan Glow */
+}
+
+/* 5. Text Styling */
+.about-text-content {
+    color: white;
+    max-width: 600px;
+}
+
+.about-text-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-text-content h2 span {
+    color: #00e5ff; /* Cyan Highlight */
+}
+
+/* 6. The Glass Box for Text */
+.glass-box {
+    background: rgba(20, 20, 20, 0.6); /* Semi-transparent dark box */
+    border: 1px solid rgba(0, 229, 255, 0.2); /* Subtle blue border */
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+
+    /* --- The Fix for Responsiveness --- */
+    width: 100%;           /* Try to fill the container... */
+    max-width: 750px;      /* ...but NEVER grow larger than 700px */
+    height: auto;          /* Allow height to grow with the text */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .about-wrapper {
+        flex-direction: column;
+        padding-top: 80px;
+        text-align: center;
+    }
+    
+    .about-img-container img {
+        width: 250px;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .glass-box {
+        padding: 1.5rem;   /* Less padding on small screens */
+        font-size: 1.1rem; /* Smaller font so it doesn't look huge on a phone */
+    }
+}
+
+
+/* --- LARGE POPUP STYLING (Responsive & User Friendly) --- */
+.large-popup-box {
+    width: 90%;
+    max-width: 900px; 
+    max-height: 85vh; /* Leaves space for mobile browser bars */
+    overflow-y: auto; 
+    padding: 3rem;    /* More breathing room */
+    background: #0b0d17;
+    border: 2px solid #aa00ff; 
+    box-shadow: 0 0 30px rgba(170, 0, 255, 0.3);
+    border-radius: 15px;
+    position: relative; /* For positioning the close icon */
+}
+
+/* Close Icon (Make it big and easy to tap) */
+.large-popup-box .close-icon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.5rem; /* Bigger for mobile tapping */
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.1); /* Background to make it visible */
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.large-popup-box .close-icon:hover {
+    color: #ff4d4d;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- TEXT STYLING (Larger & clearer) --- */
+#work-title {
+    font-size: 2.5rem; /* Large Title */
+    margin-bottom: 1.5rem;
+    color: #00c8ff;
+    padding-right: 3rem; /* Prevents text from hitting the close button */
+}
+
+.work-description p {
+    font-size: 1.3rem; /* Increased size for readability */
+    line-height: 1.8;  /* More space between lines */
+    color: #e0e0e0;
+    text-align: left;  /* Easier to read than justify on web */
+    margin-bottom: 2rem;
+}
+
+/* --- GALLERY STYLING --- */
+.work-gallery {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+/* 1. Grid Layout (Desktop: 2 Columns) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px; /* Bigger images */
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    border-color: #00c8ff;
+    z-index: 2;
+}
+
+/* 2. Single Layout (Drawings) */
+.gallery-single {
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.3); /* Dark bg to make art pop */
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.gallery-single img {
+    width: 100%;
+    max-height: 600px; /* Taller limit for artwork */
+    object-fit: contain; 
+    border-radius: 5px;
+}
+
+/* --- MOBILE RESPONSIVENESS (The Critical Fix) --- */
+@media (max-width: 768px) {
+    .large-popup-box {
+        width: 95%;      /* Wider on phone */
+        padding: 1.5rem; /* Less padding to save space */
+        max-height: 80vh;
+    }
+
+    #work-title {
+        font-size: 1.8rem; /* Smaller title for mobile */
+    }
+
+    .work-description p {
+        font-size: 1.1rem; /* readable size for mobile */
+    }
+
+    /* Stack images on phone so they are big enough to see */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 Column only */
+    }
+
+    .gallery-grid img {
+        height: auto; /* Let height adjust automatically */
+        max-height: 300px;
+    }
+}
+
+/* Custom Scrollbar */
+.large-popup-box::-webkit-scrollbar { width: 8px; }
+.large-popup-box::-webkit-scrollbar-track { background: #0b0d17; }
+.large-popup-box::-webkit-scrollbar-thumb { background: #aa00ff; border-radius: 4px; }
+
+/* --- CONTACT SECTION --- */
+.contact .heading {
+    font-size: 5rem !important; 
+    margin-bottom: 4rem;
+    text-align: left;
+}
+
+.contact {
+    min-height: 100vh;
+    padding: 8rem 9% 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative; /* Vital for containing the canvas */
+    overflow: hidden;   /* Keeps the animation inside the box */
+    z-index: 1;         /* Establishes a stacking context */
+}
+
+#contactCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Puts it BEHIND the form */
+    opacity: 0.6; /* Subtle blend with the dark background */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    gap: 4rem;
+    flex-wrap: wrap; /* Stack on mobile */
+}
+
+/* Ensure the content stays on top */
+.contact-container, .contact .heading {
+    position: relative;
+    z-index: 10;
+}
+
+.sub-heading {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+/* --- LEFT COLUMN: INFO --- */
+.contact-info {
+    flex: 1 1 300px;
+}
+
+.glass-desc {
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Box Titles (Phone / Email) */
+.contact-details h4 {
+    font-size: 1.5rem; /* Increased from 1.2rem */
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+/* The Actual Number / Email Address */
+.contact-details p {
+    font-size: 1.2rem; /* Increased from 1rem */
+    font-weight: 500;  /* Make it slightly bolder */
+    color: #e0e0e0;
+}
+
+/* Increase the Icon size too, to balance it out */
+.contact-icon {
+    font-size: 3rem; /* Increased from 2.5rem */
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: 0.3s;
+    font-size: 1.5rem;
+}
+
+.contact-box:hover {
+    border-color: #00c8ff;
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: #aa00ff;
+}
+
+.contact-details h4 {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details p {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+/* Social Buttons */
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+    transition: 0.4s;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+}
+.social-btn.whatsapp:hover { background: #25D366; border-color: #25D366; box-shadow: 0 0 20px #25D366; }
+.social-btn.facebook:hover { background: #1877F2; border-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
+.social-btn.linkedin:hover { background: #0077b5; border-color: #0077b5; box-shadow: 0 0 20px #0077b5; }
+
+
+/* --- RIGHT COLUMN: FORM --- */
+
+
+.contact-form {
+    flex: 1 1 400px;
+    background: rgba(11, 13, 23, 0.8);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(#0b0d17, #0b0d17) padding-box,
+        linear-gradient(135deg, #00c8ff, #aa00ff) border-box;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.1);
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+/* Glow Effect on Focus */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #aa00ff;
+    background: rgba(170, 0, 255, 0.05);
+    box-shadow: 0 0 10px rgba(170, 0, 255, 0.2);
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    padding: 2rem 9%;
+    background: #05060a; /* Slightly darker than the main background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Subtle Top Border to separate from Contact section */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto; /* Pushes footer to bottom if page content is short */
+}
+
+.footer p {
+    font-size: 1.1rem;
+    color: #b0b0b0; /* Soft Grey */
+    letter-spacing: 1px; /* Adds a premium feel */
+    text-align: center;
+}
+
+.footer span {
+    color: #00c8ff; /* Your Theme Cyan */
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.3); /* Slight Glow */
+}
+
+/* Optional: Mobile Adjustment */
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 5%;
+    }
+    .footer p {
+        font-size: 0.9rem;
+    }
+}

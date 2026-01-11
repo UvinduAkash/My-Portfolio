@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uvindu Akash | Engineering Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio<span class="dot">.</span></a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Expertise</a>
+            <a href="#skills">Expertise</a> <a href="#work">Work</a>
+            <a href="#contact">Connect</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+    
+    <canvas id="waveCanvas"></canvas>
+
+    <div class="home-content main-content">
+        <h3>Welcome to my workspace</h3>
+        <h1>I am Uvindu Akash</h1>
+        <h3><span class="multiple-text"></span></h3>
+        <p>Undergraduate at <strong>Open University of Sri Lanka (OUSL)</strong> & Proud <strong>Palian</strong>.</p>
+        
+        <div class="social-media">
+            <a href="https://www.facebook.com/uvindu.akash" target="_blank"><i class='bx bxl-facebook'></i></a>
+            <a href="https://github.com/UvinduAkash" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://www.linkedin.com/in/uvindu-akash-8127a5319/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            
+            <a href="#" onclick="openPopup('gmail'); return false;">
+                <i class='bx bxl-gmail'></i>
+            </a>
+
+            <a href="#" onclick="openPopup('whatsapp'); return false;">
+                <i class='bx bxl-whatsapp'></i>
+            </a>
+        </div>
+        
+        <a href="#portfolio" class="btn">View My Work</a>
+    </div>
+
+    <div class="home-img main-content">
+        <div class="glow-circle"></div>
+        <img src="uvindu_innova.jpg" alt="Uvindu Akash">
+    </div>
+
+    <div id="custom-popup" class="popup-overlay">
+        <div class="popup-box">
+            <i class='bx bx-x close-icon' onclick="closePopup()"></i>
+            <div class="popup-icon" id="popup-icon-display"></div>
+            <h3 id="popup-title">Connect</h3>
+            <p id="popup-text">Details...</p>
+            <button class="btn" onclick="closePopup()">Got it</button>
+        </div>
+    </div>
+
+</section>
+
+<section id="about" class="about-section">
+    
+    <canvas id="crystalCanvas"></canvas>
+
+    <div class="about-wrapper main-content">
+        
+        <div class="about-img-container">
+            <div class="glow-effect"></div>
+            <img src="aboutme.jpg" alt="Uvindu Akash">
+        </div>
+
+        <div class="about-text-content">
+            <h2 class="heading">Who is <span>Uvindu Akash?</span></h2>
+            
+            <div class="glass-box">
+                <p>
+                    I am a <strong>BSc Hons. Computer Engineering Undergraduate</strong> at <strong>The Open University of Sri Lanka</strong> and an Old Boy of <strong>Dharmapala Vidyalaya Pannipitiya</strong>.
+                </p>
+                <br>
+                <p>
+                    My passion lies in the intersection of <em>Arts include content write & create </em>  and <em>Computer Engineering</em>. Currently I'm <strong>Assistant Media Manager of SEDS OUSL</strong> 25/26 term. Therefore, I like to designing and managing software and hardware design projects. Currently, I am working on software web development project.
+                </p>
+            </div>
+            
+            <a href="#" class="btn secondary-btn">Download CV</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="skills" id="skills">
+    <h2 class="heading">My <span>Paths & Skills</span></h2>
+
+    <div class="skills-container">
+        
+        <div class="jewel-card amethyst">
+            <h3><i class='bx bx-chip'></i> Engineering</h3>
+            <ol>
+                <li class="clickable-item" onclick="openPopup('languages')">
+                    <span>Programming Languages</span>
+                    <i class='bx bx-link-external'></i>
+                </li>
+                <li>Engineering Mathematics</li>
+                <li>Basic IoT Design</li>
+                <li>Project Handling</li>
+            </ol>
+        </div>
+
+        <div class="jewel-card emerald">
+            <h3><i class='bx bx-palette'></i> Creative</h3>
+            <ul>
+                <li>Pencil Arts & Sketching</li>
+                <li>UI/Flyer Design</li>
+                <li>Content Writing</li>
+                <li>Video Editing</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<div id="custom-popup" class="popup-overlay">
+    <div class="popup-box">
+        <i class='bx bx-x close-icon' onclick="closePopup()"></i>
+        
+        <div class="popup-icon" id="popup-icon-display"></div>
+        
+        <h3 id="popup-title">Connect</h3>
+        
+        <div id="popup-text">Details...</div>
+        
+        <button class="btn" onclick="closePopup()">Got it</button>
+    </div>
+</div>
+
+   
+<section class="work" id="work">
+    <h2 class="heading">My <span>Works</span></h2>
+
+    <div class="work-container">
+        
+        <div class="accordion-box">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <i class='bx bxs-graduation'></i> <span>University Projects</span>
+                </div>
+                <i class='bx bx-chevron-down icon-arrow'></i>
+            </div>
+            
+            <div class="accordion-content">
+                <ul class="project-list">
+                     <li onclick="openWorkPopup('pharmacy')">
+                          <span><i class='bx bxs-circle'></i> Pharmacy Management System</span>
+                          <i class='bx bx-chevron-right click-hint'></i> </li>
+    
+                     <li onclick="openWorkPopup('odl')">
+                          <span><i class='bx bxs-circle'></i> Open Distance Learning System</span>
+                          <i class='bx bx-chevron-right click-hint'></i>
+                      </li>
+    
+                     <li onclick="openWorkPopup('waste')">
+                          <span><i class='bx bxs-circle'></i> Waste Management System (REBYNA)</span>
+                         <i class='bx bx-chevron-right click-hint'></i>
+                     </li>
+                 </ul>
+            </div>
+        </div>
+
+        <div class="accordion-box">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <i class='bx bxs-factory'></i> <span>Industrial Projects</span>
+                </div>
+                <i class='bx bx-chevron-down icon-arrow'></i>
+            </div>
+            
+            <div class="accordion-content">
+                <ul class="project-list">
+                 <li onclick="openWorkPopup('transport')">
+                      <span><i class='bx bxs-circle'></i> Transport Management System</span>
+                       <i class='bx bx-chevron-right click-hint'></i>
+                 </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-box" id="drawings-box">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <div class="accordion-title">
+                    <i class='bx bxs-palette'></i> <span>Drawings</span>
+                </div>
+                <i class='bx bx-chevron-down icon-arrow'></i>
+            </div>
+            
+            <div class="accordion-content">
+                
+                <div class="nested-box">
+                    <div class="nested-header" onclick="toggleNested(this)">
+                        <span><i class='bx bx-pencil' style="color:#aa00ff; margin-right:10px;"></i> Pencil Arts</span>
+                        <i class='bx bx-plus' style="color:#00c8ff;"></i>
+                    </div>
+                    <div class="nested-content">
+                        <ul class="project-list scrollable-list">
+                           <li onclick="openWorkPopup('pencil1')">
+                                 <span>Pencil Art 1</span>
+                                <i class='bx bx-chevron-right click-hint'></i>
+                          </li>
+                           <li onclick="openWorkPopup('pencil2')">
+                                 <span>Pencil Art 2</span>
+                                 <i class='bx bx-chevron-right click-hint'></i>
+                          </li>
+                           <li onclick="openWorkPopup('pencil3')">
+                                 <span>Pencil Art 3</span>
+                                 <i class='bx bx-chevron-right click-hint'></i>
+                          </li>
+                          <li onclick="openWorkPopup('pencil4')">
+                                 <span>Pencil Art 4</span>
+                                 <i class='bx bx-chevron-right click-hint'></i>
+                          </li>
+                           <li onclick="openWorkPopup('pencil5')">
+                                 <span>Pencil Art 5</span>
+                                 <i class='bx bx-chevron-right click-hint'></i>
+                          </li>
+                           <li onclick="openWorkPopup('pencil6')">
+                                 <span>Pencil Art 6</span>
+                                 <i class='bx bx-chevron-right click-hint'></i>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="nested-box">
+                    <div class="nested-header" onclick="toggleNested(this)">
+                        <span><i class='bx bxs-brush' style="color:#aa00ff; margin-right:10px;"></i> Canvas Arts</span>
+                        <i class='bx bx-plus' style="color:#00c8ff;"></i>
+                    </div>
+                    <div class="nested-content">
+                         <ul class="project-list scrollable-list">
+                            <li onclick="openWorkPopup('canvas1')">
+                                 <span>Canvas Art 1</span>
+                                 <i class='bx bx-chevron-right click-hint'></i>
+                          </li>
+                            <li onclick="openWorkPopup('canvas2')">
+                                 <span>Canvas Art 2</span>
+                                 <i class='bx bx-chevron-right click-hint'></i>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="work-popup" class="popup-overlay" style="display: none;">
+    <div class="popup-box large-popup-box">
+        <i class='bx bx-x close-icon' onclick="closeWorkPopup()"></i>
+        
+        <h3 id="work-title">Project Title</h3>
+        
+        <div id="work-gallery" class="work-gallery"></div>
+        
+        <div class="work-description">
+            <p id="work-desc">Description goes here...</p>
+        </div>
+        
+        <button class="btn" onclick="closeWorkPopup()">Close</button>
+    </div>
+</div>
+
+<section class="contact" id="contact">
+
+     <canvas id="contactCanvas"></canvas>
+    <h2 class="heading">Contact <span>Me</span></h2>
+
+    <div class="contact-container">
+        
+        <div class="contact-info">
+            <h3 class="sub-heading">Get in Touch</h3>
+            <p class="glass-desc">
+                Have a project in mind or just want to say hi? 
+                Feel free to send me a message!
+            </p>
+
+            <div class="contact-box">
+                <div class="contact-icon">
+                    <i class='bx bxs-phone'></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Phone / WhatsApp</h4>
+                    <p>+94 71 884 4726</p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <div class="contact-icon">
+                    <i class='bx bxl-gmail'></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Email</h4>
+                    <p>uvinduakash3@gmail.com</p>
+                </div>
+            </div>
+
+           
+        </div>
+
+        <form id="contact-form" class="contact-form" onsubmit="sendMail(event)">
+            <h3 class="sub-heading">Send a Message</h3>
+            
+            <div class="input-box">
+                <input type="text" id="user_name" placeholder="Your Name " required>
+                <div class="focus-border"></div>
+            </div>
+
+            <div class="input-box">
+                <input type="email" id="user_email" placeholder="Your Email Address" required>
+                <div class="focus-border"></div>
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="subject" placeholder="Email Subject" required>
+                <div class="focus-border"></div>
+            </div>
+
+            <div class="input-box">
+                <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <div class="focus-border"></div>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+    </div>
+</section>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+ <footer class="footer">
+    <p>
+        Copyright &copy; 2026 | Designed & Built by <span>Uvindu Akash</span>
+    </p>
+</footer>
+
+<script>
+    const canvas = document.getElementById('waveCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+
+    // Configuration for "High Energy" Wave
+    const opts = {
+        lineCount: 100,       // More lines for a denser, richer look
+        amplitude: 100,       // MUCH higher waves (was 50)
+        speed: 0.003,         // Slightly faster flow
+        frequency: 0.002,     // The base curve tightness
+        color: 'rgba(170, 0, 255, 0.15)'
+    };
+
+    function resize() {
+        const parent = canvas.parentElement;
+        width = canvas.width = parent.clientWidth;
+        height = canvas.height = parent.clientHeight;
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    let tick = 0;
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        const centerY = height / 2;
+
+        for (let i = 0; i < opts.lineCount; i++) {
+            ctx.beginPath();
+            
+            // Dynamic Color: Moving gradient from Purple to Cyan
+            // We use 'tick' in the hue calculation to make the colors cycle slowly
+            const hue = 260 + (i * 0.5) + Math.sin(tick * 0.5) * 20; 
+            ctx.strokeStyle = `hsla(${hue}, 80%, 60%, 0.15)`; 
+            ctx.lineWidth = 1;
+
+            for (let x = 0; x <= width; x += 5) { // tighter step for smoother curves
+                
+                const progress = x / width;
+
+                // 1. The Diagonal Path (Button -> Head)
+                const startY = height * 0.85; 
+                const endY = height * 0.15;
+                const slope = startY - (startY - endY) * progress;
+
+                // 2. The "Energy" Envelope
+                // This forces the wave to be small at the ends (0) and HUGE in the middle (1)
+                // It creates that "burst" shape.
+                const envelope = Math.sin(progress * Math.PI); 
+
+                // 3. The Complex Wave Math (The "Lively" part)
+                // We combine 3 sine waves at different speeds to create "knots" and "twists"
+                const noise1 = Math.sin(x * 0.003 + tick) * 30;
+                const noise2 = Math.sin(x * 0.007 + tick * 1.5 + i * 0.05) * 20;
+                const noise3 = Math.sin(x * 0.002 + tick * 0.5) * 20;
+
+                // Combine them and apply the envelope
+                // The (i * 0.5) adds thickness/depth to the ribbon
+                const y = slope + (noise1 + noise2 + noise3) * envelope * 1.5 + (i * 0.5);
+
+                if (x === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            
+            ctx.stroke();
+        }
+
+        tick += opts.speed;
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+
+<script>
+    const cCanvas = document.getElementById('crystalCanvas');
+    const cCtx = cCanvas.getContext('2d');
+
+    let cw, ch;
+
+    // "Live Crystal" Configuration
+    const meshOpts = {
+        count: 70,           // Number of nodes (Higher = denser mesh)
+        range: 180,          // Connection distance
+        speed: 0.4,          // Movement speed
+        color: '0, 229, 255' // Bright Cyan RGB
+    };
+
+    let points = [];
+
+    class Point {
+        constructor() {
+            this.x = Math.random() * cw;
+            this.y = Math.random() * ch;
+            this.vx = (Math.random() - 0.5) * meshOpts.speed;
+            this.vy = (Math.random() - 0.5) * meshOpts.speed;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            // Bounce off walls
+            if (this.x < 0 || this.x > cw) this.vx *= -1;
+            if (this.y < 0 || this.y > ch) this.vy *= -1;
+        }
+    }
+
+    function initMesh() {
+        const parent = cCanvas.parentElement;
+        cw = cCanvas.width = parent.clientWidth;
+        ch = cCanvas.height = parent.clientHeight;
+
+        points = [];
+        for (let i = 0; i < meshOpts.count; i++) {
+            points.push(new Point());
+        }
+    }
+
+    window.addEventListener('resize', initMesh);
+    initMesh();
+
+    function animateMesh() {
+        cCtx.clearRect(0, 0, cw, ch);
+
+        // 1. Update Points
+        points.forEach(p => p.update());
+
+        // 2. Draw Connections (The Crystal Shape)
+        for (let i = 0; i < points.length; i++) {
+            const p1 = points[i];
+            
+            // Connect to other points close by
+            for (let j = i + 1; j < points.length; j++) {
+                const p2 = points[j];
+                const dx = p1.x - p2.x;
+                const dy = p1.y - p2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < meshOpts.range) {
+                    cCtx.beginPath();
+                    
+                    // Create opacity based on distance (closer = brighter)
+                    const opacity = 1 - (dist / meshOpts.range);
+                    
+                    cCtx.strokeStyle = `rgba(${meshOpts.color}, ${opacity})`;
+                    cCtx.lineWidth = 1;
+                    cCtx.moveTo(p1.x, p1.y);
+                    cCtx.lineTo(p2.x, p2.y);
+                    cCtx.stroke();
+                }
+            }
+            
+            // Draw the nodes (dots)
+            cCtx.beginPath();
+            cCtx.arc(p1.x, p1.y, 2, 0, Math.PI * 2);
+            cCtx.fillStyle = `rgb(${meshOpts.color})`;
+            cCtx.fill();
+        }
+
+        requestAnimationFrame(animateMesh);
+    }
+
+    animateMesh();
+</script>
+
+
+<script>
+    /* ================= CONTACT PAGE ANIMATION (Floating Tech Tiles) ================= */
+    (function() {
+        const canvas = document.getElementById('contactCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        // Icons to draw inside the tiles
+        const icons = ['@', '✉', '📞', '⚡', '...']; 
+
+        let tiles = [];
+
+        // Resize function
+        function resize() {
+            // We want the canvas to match the Section size, not the whole window
+            const parent = canvas.parentElement;
+            width = canvas.width = parent.offsetWidth;
+            height = canvas.height = parent.offsetHeight;
+        }
+
+        // The Tile Class
+        class Tile {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                // Random position
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                
+                // Random size (squares)
+                this.size = Math.random() * 40 + 30; // Between 30px and 70px
+                
+                // Slow floating speed
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                
+                // Icon
+                this.text = icons[Math.floor(Math.random() * icons.length)];
+                
+                // Opacity for the glass effect
+                this.opacity = Math.random() * 0.3 + 0.1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Bounce off edges (keep them inside the section)
+                if (this.x < -50 || this.x > width + 50) this.speedX *= -1;
+                if (this.y < -50 || this.y > height + 50) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+
+                // 1. Draw the Glass Square
+                ctx.fillStyle = `rgba(0, 200, 255, ${this.opacity * 0.2})`; // Very faint fill
+                ctx.strokeStyle = `rgba(0, 200, 255, ${this.opacity})`;   // Brighter border
+                ctx.lineWidth = 2;
+                
+                // Rounded Rectangle path
+                const s = this.size;
+                const r = 10; // corner radius
+                ctx.beginPath();
+                ctx.moveTo(-s/2 + r, -s/2);
+                ctx.lineTo(s/2 - r, -s/2);
+                ctx.quadraticCurveTo(s/2, -s/2, s/2, -s/2 + r);
+                ctx.lineTo(s/2, s/2 - r);
+                ctx.quadraticCurveTo(s/2, s/2, s/2 - r, s/2);
+                ctx.lineTo(-s/2 + r, s/2);
+                ctx.quadraticCurveTo(-s/2, s/2, -s/2, s/2 - r);
+                ctx.lineTo(-s/2, -s/2 + r);
+                ctx.quadraticCurveTo(-s/2, -s/2, -s/2 + r, -s/2);
+                ctx.closePath();
+                
+                ctx.fill();
+                ctx.stroke();
+
+                // 2. Draw the Icon Text
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
+                ctx.font = `${this.size * 0.5}px Arial`; // Scale font with box
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(this.text, 0, 2); // slight y-offset for visual center
+
+                // 3. Optional: Add a subtle glow dot
+                if (Math.random() > 0.95) {
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = '#00c8ff';
+                }
+
+                ctx.restore();
+            }
+        }
+
+        // Initialize Tiles
+        function initTiles() {
+            tiles = [];
+            // Create about 15-20 tiles
+            for (let i = 0; i < 20; i++) {
+                tiles.push(new Tile());
+            }
+        }
+
+        // Animation Loop
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            tiles.forEach(tile => {
+                tile.update();
+                tile.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        // Start everything
+        window.addEventListener('resize', () => {
+            resize();
+            initTiles();
+        });
+        
+        resize();
+        initTiles();
+        animate();
+
+    })();
+</script>
+
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
